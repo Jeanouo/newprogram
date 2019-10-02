@@ -1,0 +1,920 @@
+/* For bg ↓↓↓ */
+main {
+    width: 100%;
+    height: 100%;
+    background: rgb(56, 56, 56);
+}
+
+/* For main width ↓↓↓ */
+.max-width {
+    display: flex;
+    justify-content: flex-end;
+    width: 1440px;
+    padding-top: 20px;
+    margin: 0px auto;
+    height: 100vh;
+    /* background: #eee; */
+    padding-top: 100px;
+}
+
+
+/* For Top ↓↓↓ */
+.program-top {
+    display: flex;
+    justify-content: center;  
+    align-items: center;  
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #4A4A4A;    
+    cursor: pointer;
+    position: fixed;
+    bottom: 15px;
+    left: calc(50% + 720px + 15px);
+    z-index: 3;
+}
+.program-top:hover {
+    filter: brightness(1.2);
+}
+.program-top span {
+    width: 15px;
+    height: 15px;
+    border-top: 3px solid #fff;
+    border-left: 3px solid #fff;   
+    transform: translateY(3px) rotate(45deg);
+}
+
+
+/* Over 1200px menu ↓↓↓ */
+.program-menu {
+    width: 290px;
+    height: auto;
+    
+    background: #aaa;
+    position: fixed;
+    top: 100px;
+    left: calc(50% - 720px);
+}
+.program-menu-content {
+    width: 290px;
+    height: auto; 
+    max-height: calc(100vh - 120px);
+    background: #666;
+    position: relative;
+}
+
+.program-content-scroll {
+    width: 100%;
+    max-height: calc(100vh - 120px);
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+.menu-list {
+    overflow: hidden;
+}
+
+/* Over 1200px menu - click btn ↓↓↓ */
+.menu-title-btn {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 35px;
+    color: #fff;
+    background: #333;
+    cursor: pointer;
+}
+.menu-title {
+    padding-left: 15px;
+}
+.menu-title-icon {
+    padding: 0px 15px; 
+    transition: all .3s;
+}
+.menu-title-icon:focus {
+    background: rgba(0,0,0,0); 
+}
+.menu-icon-rotate {
+    transform: rotate(180deg);
+}
+
+/* Over 1200px menu - main content ↓↓↓ */
+.menu-tabs-box {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 10px;
+    padding-bottom: 0px;
+}
+.menu-main-tab {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: calc((100% - 20px) / 3);
+    height: 50px;
+    font-size: 14px;
+    background: #aaa;
+    padding: 5px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    transition: all 0.3s;
+}
+.menu-main-tab:nth-of-type(3n) {
+    margin-right: 0px;
+}
+.menu-main-tab img {
+    display: block;
+    width: 20px;
+    height: 20px;
+    background: #eee;
+    border-radius: 50%;
+    margin-bottom: 5px;
+}
+.menu-main-tab p {
+    text-align: center;
+}
+
+/* Over 1200px menu - sec content ↓↓↓ */
+.menu-sec-tab {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: calc((100% - 27px) / 4);
+    height: 25px;
+    font-size: 14px;
+    text-align: center;
+    letter-spacing: 2px;
+    background: #aaa;
+    padding: 3px;
+    margin-right: 9px;
+    margin-bottom: 10px;
+    transition: all 0.3s;
+}
+.menu-sec-tab:nth-of-type(4n) {
+    margin-right: 0px;
+}
+
+.menu-sec-tab-active {
+    background: #eee;
+}
+
+
+/* Over 1200px - side-banner 270*220 ↓↓↓ */
+.side-banner {
+    width: 100%;
+    padding: 10px;
+}
+.side-banner img {
+    display: block;
+    width: 100%;
+    height: 220px;
+    background: #eee;
+}
+
+
+/* Program ↓↓↓ */
+.program-contnt {
+    width: calc(100% - 310px);
+
+    /* height: calc(100vh - 100px);
+    background: #aaa; */
+}
+
+/* Main-banner ↓↓↓ */
+.main-banner {
+    width: 100%;
+    height: auto;
+}
+.main-banner img {
+    width: 100%; 
+}
+
+
+/* Under 1200px - menu ↓↓↓ */
+.under1200-menu {
+    display: none;
+}
+.swiper-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 35px;
+    height: 35px;
+    position: absolute;
+    top: 0px;
+    right: 10px;    
+    z-index: 4;
+}
+.swiper-button span {
+    display: block;
+    width: 12px;
+    height: 12px;
+    border-top: 3px solid #fff;
+    border-left: 3px solid #fff;
+    transform: translateY(-3px) rotate(-135deg);
+    transition: all .5s;
+}
+.swiper-button .turn-arrow {    
+    transform: translateY(3px) rotate(45deg);
+}
+
+
+/* Program content ↓↓↓ */
+/* Date */
+.program-date {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 10px 30px;
+    font-size: 20px;
+    color: #fff;
+    letter-spacing: 2px;
+    font-weight: bold;
+}
+.program-date span {
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+
+/* Content */
+.program-content-tab {
+    display: flex;
+    width: 100%;
+    padding: 10px 30px;
+    background: #c4c4c4;
+    margin-bottom: 7px;
+}
+.program-tab-details {
+    width: 132px;
+}
+.program-detail-name {
+    color: #fff;
+    font-size: 12px;
+    margin-bottom: 8px;
+}
+.program-details-btnNTime {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+}
+.program-detail-time {
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+}
+/* 預定 */
+.program-detail-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 75px;
+    height: 25px;
+    color: #fff;
+    font-size: 12px;
+    border: 1px solid #fff;
+}
+.program-detail-btn-active {
+    background: #cfcfcf;
+}
+/* 已預定 */
+.program-btn-booking {
+
+}
+.program-btn-booking-active {
+
+}
+/* 直播中 */
+.program-btn-live {
+
+}
+.program-btn-live-active {
+
+}
+/* 播放中 */
+.program-btn-playing {
+
+}
+.program-btn-playing-active {
+
+}
+
+.program-tab-rance {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-width: 165px;
+    margin: 0px 30px;
+}
+.program-rance-box {
+    display: flex;   
+    align-items: center;
+}
+.program-rance-box > div {
+    display: flex;
+    align-items: center;
+    width: 20px;
+    min-width: 20px;
+    height: 20px;
+    background: #fff;
+    border-radius: 50%;
+}
+.program-rance-box img {
+    width: 100%;
+}
+.program-team-name {
+    color: #fff;
+    font-size: 12px;
+    padding: 0px 10px;
+}
+.program-team-score {
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* Scroll */
+.program-tab-transfer {
+    width: calc(100% - 132px - 165px - 60px);
+    position: relative;
+}
+.swiper-container {
+    display: flex;
+    align-content: center;
+    width: 100%;
+    padding: 0px 40px;
+    height: 100%;
+}
+.swiper-wrapper {
+    display: flex;
+}
+.swiper-slide {
+    display: flex;
+    align-items: center;
+    width: auto;
+    font-size: 12px;
+    text-align: center;
+}
+.swiper-slide img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 5px;
+}
+.program-name {
+    width: 75px;
+    color: #fff;
+}
+.program-transfer-note {
+    width: 73px;
+    color: rgb(163, 163, 163);
+    background: #D5D5D5;
+    transform: scale(0.9);
+    padding: 2px 5px;
+}
+
+/* Scroll btn */
+.swiper-button-prev, .swiper-button-next {
+    display: flex;
+    align-items: center;
+    width: 30px;
+    height: 100%; 
+    background-image: none;
+    background: #c4c4c4;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+}
+.swiper-button-prev:hover, .swiper-button-next:hover {
+    background: #999;
+}
+.swiper-button-prev {
+    justify-content: flex-end;
+    left: 0px;
+}
+.swiper-button-next {
+    justify-content: flex-start;
+    right: 0px;
+} 
+.swiper-button-prev span, .swiper-button-next span {
+    display: block;
+    width: 20px;
+    height: 20px;
+    border-top: 3px solid #fff;
+}
+.swiper-button-prev span {
+    border-left: 3px solid #fff;
+    transform: rotate(-45deg);
+}
+.swiper-button-next span {
+    border-right: 3px solid #fff;
+    transform: rotate(45deg);
+}
+.swiper-button-disabled {
+    opacity: 0;
+    display: none;
+}
+
+/* Under 1200px - 調流 btn ↓↓↓ */
+.m-program-transfer-btn {
+    display: none;
+}
+
+/* Under 1200px - 調流 btn content ↓↓↓ */
+.m-program-box {
+    display: none;
+}
+
+
+/* Sec-banner 270*220 ↓↓↓ */
+.sec-banner {
+    width: 100%;    
+    height: auto;
+}
+.sec-banner img {
+    width: 100%;
+}
+
+
+/* Program - no program ↓↓↓ */
+.program-content-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 70px; 
+    color: #fff;
+    background: #C4C4C4;
+    margin-bottom: 7px;
+    cursor: default;
+}
+
+@media screen and (max-width: 1600px) {
+    /* For main width ↓↓↓ */
+    .max-width {
+        width: 90%;
+    }
+
+
+    /* For Top ↓↓↓ */
+    .program-top {
+        left: calc(100% - 65px);
+    }
+
+
+    /* Over 1200px menu ↓↓↓ */
+    .program-menu {
+        left: 5%;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    /* For main width ↓↓↓ */
+    .max-width {
+        width: 100%;
+        padding-top: 80px;
+    }
+
+
+    /* For Top ↓↓↓ */
+    .program-top {
+        bottom: 20px;
+        left: calc(100% - 60px);
+    }
+
+
+    /* Over 1200px menu ↓↓↓ */
+    .program-menu {
+        display: none;
+    }
+
+
+    /* Under 1200px - menu ↓↓↓ */
+    .under1200-menu {
+        display: block;
+        width: 100%;
+        height: auto;
+        min-height: 35px;
+        background: #666;
+        padding: 0px 10px;
+        position: relative;
+    }
+    /* Menu open */
+    .under1200-menu-open {
+        width: 100%;
+        height: auto;
+        background: #666;
+        padding: 0px 30px 5px 30px;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        z-index: 2;
+    }
+    .menu2-list {
+        width: 100%;
+        min-height: 70px;
+        height: auto;
+    }
+    .menu2-title {
+        display: flex;
+        align-items: center;
+        color: #fff;
+        line-height: 35px;
+    }
+    .menu2-title i {
+        font-size: 20px;
+        padding-right: 10px;
+    }
+    .menu2-tabs-box {
+        display: flex;
+        flex-wrap: wrap;
+        border-bottom: 1px solid #5c5c5c;
+        padding-bottom: 5px;
+    }
+    .menu2-list:last-child .menu2-tabs-box {        
+        border-bottom: none;
+    }
+    .menu2-tab {
+        width: 72px;
+        color: #fff;
+        font-size: 14px;
+        text-align: center;
+        background:rgba(0,0,0,0);
+        padding: 5px;
+        transition: all 0.3s;
+    }
+    .menu2-tab-active {
+        background: #444;
+    }
+
+    /* Menu close */
+    .under1200-menu-close {
+        width: 100%;
+        height: 35px;
+        overflow: hidden;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        padding-left: 10px; 
+        padding-right: 50px;  
+        z-index: 3;
+    } 
+    .under1200-menu-close::after {
+        content: '';
+        display: block;
+        width: 60px;
+        height: 35px;
+        background-image: -webkit-linear-gradient(right, #666 50%, rgba(102,102,102,0));
+        background-image: -moz-linear-gradient(right, #666 50%, rgba(102,102,102,0));
+        background-image: -o-linear-gradient(right, #666 50%, rgba(102,102,102,0));
+        background-image: linear-gradient(to left, #666 50%, rgba(102,102,102,0));
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        z-index: 1;
+    } 
+    .swiper-menu-tab {
+        height: 35px;
+        color: #fff;
+        padding: 10px;
+        border-bottom: 2px solid rgba(255,255,255,0);
+        transition: all 0.3s;
+    }
+    .swiper-menu-tab-active {
+        border-bottom: 2px solid #fff;
+    }
+    
+
+    /* Under 1200px - side-banner ↓↓↓ */
+    .side-banner {
+        display: none;
+    }
+
+
+    /* Program ↓↓↓ */
+    .program-contnt {
+        width: 100%;
+        height: calc(100vh - 80px);
+    }
+
+
+    /* Program content ↓↓↓ */
+    /* Content */
+    .program-content-tab {
+        padding: 10px 15px;
+    }
+    .program-tab-rance {
+        margin: 0px 15px 0px 30px;
+    }
+
+    /* Scroll */
+    .program-tab-transfer {
+        width: calc(100% - 132px - 165px - 40px);
+    }
+}
+
+@media screen and (max-width: 650px) {
+    /* For Top ↓↓↓ */
+    .program-top {
+        width: 40px;
+        height: 40px;
+        left: calc(100% - 50px);
+    }
+    .program-top span {
+        width: 12px;
+        height: 12px;
+        border-top: 2px solid #fff;
+        border-left: 2px solid #fff;
+    }
+
+
+    /* Program content ↓↓↓ */
+    /* Date */
+    .program-date {
+        padding: 5px 30px;
+        font-size: 18px;
+    }
+
+    /* Content */
+    .program-tab-details {
+        width: 70px;
+    }
+    .program-detail-name {
+        margin-bottom: 0px;
+    }
+    .program-details-btnNTime {
+        flex-direction: column;
+    }
+    .program-detail-time {
+        font-size: 14px;
+    }
+    .program-detail-btn {
+        width: 70px;
+        height: 20px;
+        transform: scale(0.9);
+        transform-origin: 0%;
+    }
+    .program-tab-rance {
+        margin: 0px 10px;
+    }
+
+    /* Scroll */
+    .program-tab-transfer {
+        width: calc(100% - 70px - 165px - 20px);
+    }
+}
+
+@media screen and (max-width: 540px) {
+    .under1200-menu-open {
+        padding: 0px 10px 5px 10px;
+    }
+    /* Program content ↓↓↓ */
+    /* Content */
+    .program-tab-details {
+        min-width: 70px;
+        width: auto;
+    }
+
+    /* Scroll */
+    .program-tab-transfer {
+        display: flex;
+        min-width: 150px;
+        width: calc(100% - 132px - 165px - 30px);
+    }
+    .swiper-container {
+        justify-content: center;
+        width: calc(100% - 30px);
+        padding: 0px;
+    }
+    .swiper-button-prev, .swiper-button-next {
+        display: none;
+    }
+    .program-transfer-nameNTransfer {
+        display: none;
+    }
+    .swiper-slide img {
+        margin-right: 0px;
+    }
+    .program-tab-transfer .swiper-slide  {
+        display: none;
+    }
+    .program-tab-transfer .swiper-wrapper {
+        justify-content: center;
+    }
+    .program-tab-transfer .swiper-slide:nth-of-type(1),
+    .program-tab-transfer .swiper-slide:nth-of-type(2),
+    .program-tab-transfer .swiper-slide:nth-of-type(3)  {
+        display: flex;
+    }
+
+
+    /* Under 1200px - 調流 btn ↓↓↓ */
+    .m-program-transfer-btn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 30px;
+        height: 100%;
+        background: #8d8d8d;
+        cursor: pointer;
+    }
+    .m-program-transfer-btn:hover {
+        background: #666;
+    }
+    .m-program-transfer-btn span {
+        display: block;
+        width: 15px;
+        height: 15px;
+        border-top: 3px solid #fff;
+        border-right: 3px solid #fff;
+        transform: translate(-4px, 0px) rotate(45deg);
+    }
+
+    
+    /* Under 1200px - 調流 btn content ↓↓↓ */
+    .m-program-box {
+        display: block;
+        width: 0px;
+        height: 0px;
+        overflow: hidden;
+        opacity: 0;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        z-index: 4;
+        transition: all 0.4s;
+    }
+    .m-program-box-open {
+        display: flex;
+        width: 100%;
+        height: 100vh;
+        background: #aaa;
+        padding: 15px;
+        padding-bottom: 0px;     
+        opacity: 1;
+        top: 0px;
+        left: 0px;
+
+    }
+    .m-program {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        width: 100%;
+    }
+    .m-close {
+        font-size: 30px;
+        line-height: 20px;
+        padding: 10px;
+    }
+    .m-program-author {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        height: 50px;
+        background: #999;
+        padding: 10px 15px;
+        margin-top: 5px;
+    }
+    .m-program-author > div {
+        display: flex;
+        width: calc(100% - 70px);
+    }
+    .m-author-pic {
+        width: 30px;
+        min-width: 30px;
+        height: 30px;
+        background: #777;
+        border-radius: 50%;
+    }
+    .m-author-content {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        width: calc(100% - 30px);
+        color: #fff;
+        margin: 0px 10px; 
+    }
+    .m-author-name {
+        width: auto;
+        margin-right: 10px;
+    }
+    .m-author-from {
+        max-width: 83px;
+        min-width: 70px;
+        font-size: 12px;
+        text-align: center;
+        background: #777;
+        padding: 3px 10px;
+        margin-right: 10px;
+    }
+    .m-author-enter {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #fff;
+        font-size: 14px;
+        width: 70px;
+        height: 30px;
+        background: #777;
+        transition: all 0.3s;
+    }
+    .m-author-enter-active {
+        background: #555;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    /* Main-banner ↓↓↓ */
+    .main-banner {
+        display: flex;
+        justify-content: center;
+        overflow: hidden;
+    }
+    .main-banner img {
+        width: 480px;
+        height: 60px;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    /* Program content ↓↓↓ */
+    /* Content */
+    .program-tab-details {
+        max-width: 70px;
+    }
+    .program-rance-box > div {
+        width: 16px;
+        min-width: 16px;
+        height: 16px;
+    }
+    .program-team-name {
+        padding: 0px 5px;
+    }
+    .program-tab-rance {
+        min-width: 110px;
+    }
+
+    /* Scroll */
+    .program-tab-transfer {
+        width: calc(100% - 70px - 150px - 20px);
+    }
+    .swiper-slide img {
+        width: 25px;
+        height: 25px;
+    }
+}
+
+@media screen and (max-width: 390px) {    
+    /* Program content ↓↓↓ */
+    /* Content */
+    .program-content-tab {
+        padding: 8px 15px;
+    }
+    .program-tab-details {
+        max-width: 50px;
+        min-width: 50px;
+    }
+    .program-detail-btn {
+        width: 55px;
+        height: 24px;
+    }
+    .program-tab-rance {
+        justify-content: space-around;
+        width: 150px;
+        min-width: 110px;
+    }    
+    .program-team-score {
+        font-size: 14px;
+    }
+
+    /* Scroll */
+    .program-tab-transfer {
+        min-width: 105px;
+        width: calc(100% - 50px - 150px - 20px);
+    }
+    .swiper-slide img {
+        width: 20px;
+        height: 20px;
+    }
+
+
+    /* Under 1200px - 調流 btn content ↓↓↓ */
+    .m-program-author {
+        padding: 10px;
+    }
+    .m-author-content {
+        margin: 0px 5px;
+    }
+    .m-author-name {
+        font-size: 12px;
+    }
+    .m-author-from {
+        padding: 3px 5px;
+        max-width: 70px;
+    }
+}
